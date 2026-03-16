@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Orders</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h2>Ваши заказы</h2>
+
+<div id="orders"></div>
+
+<script>
+
+let orders=JSON.parse(localStorage.getItem("orders")||"[]")
+
+let container=document.getElementById("orders")
+
+orders.forEach(o=>{
+
+let div=document.createElement("div")
+
+div.innerText=o.name+" - $"+o.price
+
+container.appendChild(div)
+
+})
+
+</script>
+
+</body>
+</html>
